@@ -5,4 +5,6 @@ public class StockOrder {
 	double unitPrice;
 	double commission;
 
+	Stock stock;
+	InvestmentAccount account;
 }
