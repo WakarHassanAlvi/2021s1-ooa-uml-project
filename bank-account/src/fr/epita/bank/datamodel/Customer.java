@@ -17,9 +17,10 @@ public class Customer {
 	public void setName(String name) {
 		if (name == null || name.startsWith("1")){
 			System.out.println("invalid value");
-			return;
+
+		}else {
+			this.name = name;
 		}
-		this.name = name;
 	}
 
 	public String getAddress() {

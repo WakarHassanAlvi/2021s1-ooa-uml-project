@@ -22,14 +22,39 @@ public class Launcher {
 
 		Customer customer = new Customer(name, address);
 
-		int initialBalance = 22980;
-		double initialInterestRate = 0.005;
+
+		Double initialBalance = null;
+		Double initialInterestRate = 0.005;
+		try{
+			System.out.println("Please input a the initial balance of the savings account");
+			initialBalance = scanner.nextDouble();
+			System.out.println("Please input a the interrest rate (default = 0.005):");
+			initialInterestRate = scanner.nextDouble();
+		}catch (Exception e){
+			e.printStackTrace();
+		}
+		//check if values are correct
+		if (initialBalance == null){ //we were not able to read correctly
+			return; //?
+		}
+
+
 		SavingsAccount savingsAccount = new SavingsAccount(initialBalance, initialInterestRate);
-		savingsAccount.withDraw(300);
+
+		System.out.println("what amount would you like to withdraw?");
+		try {
+			int amount = scanner.nextInt();
+			savingsAccount.withDraw(amount);
+		}catch(Exception e){
+			System.out.println("something went wrong, invalid amount");
+
+		}
 
 		double interests = savingsAccount.computeInterests();
 
 		System.out.println(interests);
+
+		scanner.close();
 
 	}
 }

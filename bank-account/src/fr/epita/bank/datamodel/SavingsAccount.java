@@ -15,11 +15,12 @@ public class SavingsAccount extends Account{
 	}
 
 	public SavingsAccount(double initialBalance, double initialInterestRate){
-		balance = initialBalance;
+		super(initialBalance);
 		interestRate = initialInterestRate;
 	}
 
 	public SavingsAccount(){
+		super(0);
 	}
 
 }
