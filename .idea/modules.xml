@@ -4,6 +4,9 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/2021s2-java.iml" filepath="$PROJECT_DIR$/2021s2-java.iml" />
       <module fileurl="file://$PROJECT_DIR$/bank-account/bank-account.iml" filepath="$PROJECT_DIR$/bank-account/bank-account.iml" />
+      <module fileurl="file://$PROJECT_DIR$/geometry/geometry.iml" filepath="$PROJECT_DIR$/geometry/geometry.iml" />
+      <module fileurl="file://$PROJECT_DIR$/iam/iam.iml" filepath="$PROJECT_DIR$/iam/iam.iml" />
+      <module fileurl="file://$PROJECT_DIR$/java-syntax-and-structures/java-syntax-and-structures.iml" filepath="$PROJECT_DIR$/java-syntax-and-structures/java-syntax-and-structures.iml" />
     </modules>
   </component>
 </project>
