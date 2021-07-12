@@ -10,9 +10,9 @@ public class CircleTest {
 	public static void main(String[] args) {
 		Circle c1 = new Circle(10);
 
-		double area = c1.caculateArea();
+		double area = c1.calculateArea();
 		Circle c2 = new Circle(100);
-		double areaForC2 = c2.caculateArea();
+		double areaForC2 = c2.calculateArea();
 
 
 		double areaForC2ViaStatic = Circle.calculateArea(100);
@@ -32,7 +32,7 @@ public class CircleTest {
 		double globalArea = 0.0;
 		double globalPerimeter = 0.0;
 		for (Circle circle : circles){
-			globalArea += circle.caculateArea();
+			globalArea += circle.calculateArea();
 			globalPerimeter += circle.calculatePerimeter();
 		}
 

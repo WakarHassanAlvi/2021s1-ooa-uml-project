@@ -1,6 +1,6 @@
 package fr.epita.geometry.datamodel;
 
-public class Circle {
+public class Circle implements Shape{
 
 	private double radius;
 
@@ -19,7 +19,7 @@ public class Circle {
 		return Math.PI * 2 * radius;
 	}
 
-	public double caculateArea(){
+	public double calculateArea(){
 		Ellipse ellipse = new Ellipse(this.radius, this.radius);
 		return ellipse.calculateArea();
 	}
@@ -47,5 +47,9 @@ public class Circle {
 	public int hashCode() {
 		long temp = Double.doubleToLongBits(radius);
 		return (int) (temp ^ (temp >>> 32));
+	}
+
+	public double getRadius() {
+		return this.radius;
 	}
 }

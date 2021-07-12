@@ -1,6 +1,6 @@
 package fr.epita.geometry.datamodel;
 
-public class Square {
+public class Square implements Shape {
 	private double side;
 
 
