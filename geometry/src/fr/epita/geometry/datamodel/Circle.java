@@ -20,7 +20,8 @@ public class Circle {
 	}
 
 	public double caculateArea(){
-		return Math.PI * Math.pow(this.radius,2);
+		Ellipse ellipse = new Ellipse(this.radius, this.radius);
+		return ellipse.calculateArea();
 	}
 
 	public double calculatePerimeter(){

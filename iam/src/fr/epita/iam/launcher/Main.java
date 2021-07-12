@@ -2,6 +2,9 @@ package fr.epita.iam.launcher;
 
 import java.util.Scanner;
 
+import fr.epita.iam.execution.menus.AuthenticationConsoleActivity;
+import fr.epita.iam.execution.menus.MainMenu;
+
 public class Main {
 
 
@@ -9,23 +12,39 @@ public class Main {
 		Scanner scanner = new Scanner(System.in);
 
 		System.out.println("Welcome to this app, please type a user name and a password");
-		System.out.print("user: ");
-		String userName = scanner.nextLine();
-		System.out.print("password: ");
-		String password = scanner.nextLine();
 
-		//if user exists and the provided password is matching the expected one
-		boolean authenticated = userName.equals("admin") && password.equals("password");
-		if (! authenticated){
-			//TODO remove this authentication strategy in favor of a real one!!!
-			System.out.println("not authenticated... bye!");
+		if (!new AuthenticationConsoleActivity().authenticateUser(scanner)){
 			return;
 		}
 		System.out.println("you were successfully authenticated!");
+		String answer = "";
+		//scope: level 0
+		do {
 
-		System.out.println();
+			answer = new MainMenu().proposeMenuAndGetAnswer(scanner);
+			//loop from here
 
+			switch (answer) {
+			case "a":
+				System.out.println("create");
+				break;
 
+			case "b":
+				System.out.println("modify");
+				break;
+
+			case "c":
+				System.out.println("delete");
+				break;
+
+			case "q":
+				System.out.println("goodbye!");
+				break;
+			default:
+				System.out.println("option not recognized: " + answer);
+			}
+			//loop to here, and exit if the answer is equal to q
+		} while (!"q".equals(answer)); //test made in level 0 scope
 		scanner.close();
 	}
 }
