@@ -1,18 +1,44 @@
 package fr.epita.conversions;
 
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.util.Date;
 import java.util.Arrays;
 
 public class StringConversionExamples {
 
-	public static void main(String[] args) {
-		getStringFromCSVLine();
+	public static final String DATE_PATTERN = "yyyy-MM-dd";
 
-		doubleConversion("3.0");
+	public static void main(String[] args) throws ParseException {
+//		getStringFromCSVLine();
+//
+//		doubleConversion("3.0");
 
 		String dateAsString = "2021-01-01";
 		String dateAndTimeAsString = "2021-01-01_20:00:01";
 
 		String dateAndTimePattern = "yyyy-MM-dd_HH:mm:ss";
+
+
+		Date date = new Date();
+		System.out.println(date);
+
+		SimpleDateFormat dateFormat = new SimpleDateFormat(DATE_PATTERN);
+
+		String formattedDate = dateFormat.format(date);
+		System.out.println(formattedDate);
+
+
+		Date parsedDate = dateFormat.parse(dateAsString);
+		System.out.println(parsedDate);
+
+
+		LocalDate localDate = LocalDate.now();
+
+
+
 
 
 
