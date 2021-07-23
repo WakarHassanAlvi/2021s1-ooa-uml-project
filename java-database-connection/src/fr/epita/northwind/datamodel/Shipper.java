@@ -16,6 +16,14 @@ public class Shipper {
 
 	}
 
+	@Override
+	public String toString() {
+		return "Shipper{" +
+				"id=" + id +
+				", companyName='" + companyName + '\'' +
+				", phoneNumber='" + phoneNumber + '\'' +
+				'}';
+	}
 
 	public long getId() {
 		return id;

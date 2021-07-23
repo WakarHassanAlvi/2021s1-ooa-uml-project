@@ -12,9 +12,15 @@ public class FirstConnection {
 		Connection connection =
 				DriverManager.getConnection("jdbc:postgresql://localhost:5432/northwind", "postgres", "postgres");
 
-		listShippers(connection);
-		Shipper shipper = new Shipper(99, "testCompany", "33123456789");
-		createShipper(connection, shipper);
+		List<Shipper> shippers = listShippers(connection);
+		System.out.println(shippers);
+
+		int size = shippers.size();
+		System.out.println(size);
+
+
+//		Shipper shipper = new Shipper(99, "testCompany", "33123456789");
+//		createShipper(connection, shipper);
 		connection.close();
 	}
 
@@ -43,16 +49,23 @@ public class FirstConnection {
 	}
 
 	private static List<Shipper> listShippers(Connection connection) throws SQLException {
+		List<Shipper> returnedList = new ArrayList<>();
 		PreparedStatement preparedStatement =
 				connection.prepareStatement("SELECT * FROM shippers ORDER BY shipper_id LIMIT 100");
 
-		ResultSet resultSet = preparedStatement.executeQuery();
-		List<Shipper> results = new ArrayList<>();
-		while (resultSet.next()){
+		ResultSet currentRow = preparedStatement.executeQuery();
+		while (currentRow.next()){
 			//todo add a shipper for each entry in the resulting cursor (resultSet)
-			System.out.println(resultSet.getString("company_name"));
+			Shipper shipper = new Shipper();
+			shipper.setCompanyName(currentRow.getString("company_name"));
+			shipper.setId(currentRow.getLong("shipper_id"));
+			shipper.setPhoneNumber(currentRow.getString("phone"));
+//			new Shipper(currentRow.getLong("shipper_id")
+//					, currentRow.getString("company_name")
+//					, currentRow.getString("phone"));
+			returnedList.add(shipper);
 		}
-		return results;
+		return returnedList;
 	}
 
 }
