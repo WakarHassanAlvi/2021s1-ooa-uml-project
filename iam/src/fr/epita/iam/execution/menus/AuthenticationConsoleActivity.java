@@ -6,6 +6,7 @@ public class AuthenticationConsoleActivity {
 
 
 	public boolean authenticateUser(Scanner scanner){
+		IamLog.info("the user is entering in the application");
 		System.out.print("user: ");
 		String userName = scanner.nextLine();
 		System.out.print("password: ");

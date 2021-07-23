@@ -4,44 +4,67 @@ package fr.epita.conversions;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Date;
 import java.util.Arrays;
 
 public class StringConversionExamples {
 
 	public static final String DATE_PATTERN = "yyyy-MM-dd";
+	public static final String DATE_AND_TIME_PATTERN = "yyyy-MM-dd_HH:mm:ss";
 
 	public static void main(String[] args) throws ParseException {
 //		getStringFromCSVLine();
 //
 //		doubleConversion("3.0");
 
+		//dateHandlingWithJavaUtil();
+
 		String dateAsString = "2021-01-01";
 		String dateAndTimeAsString = "2021-01-01_20:00:01";
 
-		String dateAndTimePattern = "yyyy-MM-dd_HH:mm:ss";
+		LocalDate localDate = LocalDate.now();
+		DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern(DATE_PATTERN);
+
+		LocalDate parsedLocalDate = LocalDate.parse(dateAsString, dateTimeFormatter);
+		System.out.println(parsedLocalDate);
+
+		LocalDateTime localDateTime = LocalDateTime.now();
+		System.out.println("now: "+ localDateTime);
+
+		LocalDateTime parsedDateAndTime = LocalDateTime.parse(dateAndTimeAsString, DateTimeFormatter.ofPattern(DATE_AND_TIME_PATTERN));
+		System.out.println(parsedDateAndTime);
+
+	}
+
+	private static void dateHandlingWithJavaUtil() throws ParseException {
+		String dateAsString = "2021-01-01";
+		String dateAndTimeAsString = "2021-01-01_20:00:01";
 
 
 		Date date = new Date();
 		System.out.println(date);
 
+		//date handling
 		SimpleDateFormat dateFormat = new SimpleDateFormat(DATE_PATTERN);
-
 		String formattedDate = dateFormat.format(date);
 		System.out.println(formattedDate);
-
-
 		Date parsedDate = dateFormat.parse(dateAsString);
 		System.out.println(parsedDate);
 
+		//date and time handling
+		SimpleDateFormat dateTimeFormat = new SimpleDateFormat(DATE_AND_TIME_PATTERN);
+		String formattedDateTime = dateTimeFormat.format(date);
+		System.out.println(formattedDateTime);
 
-		LocalDate localDate = LocalDate.now();
+		Date parsedDateTime = dateTimeFormat.parse(dateAndTimeAsString);
+		System.out.println(parsedDateTime);
 
 
-
-
-
-
+		if (parsedDate.after(parsedDateTime)){
+			//do sth
+		}
 	}
 
 	private static void doubleConversion(String input) {
