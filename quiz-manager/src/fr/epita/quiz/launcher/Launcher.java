@@ -3,6 +3,7 @@ package fr.epita.quiz.launcher;
 import java.util.Scanner;
 
 import fr.epita.quiz.datamodel.Question;
+import fr.epita.quiz.services.data.QuestionDAO;
 
 public class Launcher {
 
@@ -20,7 +21,8 @@ public class Launcher {
 
 
 		//Data access
-
+		QuestionDAO dao = new QuestionDAO();
+		dao.create(question);
 
 
 	}
