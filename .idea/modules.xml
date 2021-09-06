@@ -8,9 +8,11 @@
       <module fileurl="file://$PROJECT_DIR$/data-stuctures/data-stuctures.iml" filepath="$PROJECT_DIR$/data-stuctures/data-stuctures.iml" />
       <module fileurl="file://$PROJECT_DIR$/geometry/geometry.iml" filepath="$PROJECT_DIR$/geometry/geometry.iml" />
       <module fileurl="file://$PROJECT_DIR$/iam/iam.iml" filepath="$PROJECT_DIR$/iam/iam.iml" />
+      <module fileurl="file://$PROJECT_DIR$/java-database-connection/java-database-connection.iml" filepath="$PROJECT_DIR$/java-database-connection/java-database-connection.iml" />
       <module fileurl="file://$PROJECT_DIR$/java-io/java-io.iml" filepath="$PROJECT_DIR$/java-io/java-io.iml" />
       <module fileurl="file://$PROJECT_DIR$/java-syntax-and-structures/java-syntax-and-structures.iml" filepath="$PROJECT_DIR$/java-syntax-and-structures/java-syntax-and-structures.iml" />
       <module fileurl="file://$PROJECT_DIR$/mob-programming/mob-programming.iml" filepath="$PROJECT_DIR$/mob-programming/mob-programming.iml" />
+      <module fileurl="file://$PROJECT_DIR$/quiz-manager/quiz-manager.iml" filepath="$PROJECT_DIR$/quiz-manager/quiz-manager.iml" />
     </modules>
   </component>
 </project>
