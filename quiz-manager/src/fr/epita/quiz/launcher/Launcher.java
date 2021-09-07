@@ -1,5 +1,7 @@
 package fr.epita.quiz.launcher;
 
+import java.sql.SQLException;
+import java.util.List;
 import java.util.Scanner;
 
 import fr.epita.quiz.datamodel.Question;
@@ -7,7 +9,7 @@ import fr.epita.quiz.services.data.QuestionDAO;
 
 public class Launcher {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws SQLException {
 		//UI
 		Scanner scanner = new Scanner(System.in);
 		System.out.println("Hello, input a question title :");
@@ -23,6 +25,8 @@ public class Launcher {
 		//Data access
 		QuestionDAO dao = new QuestionDAO();
 		dao.create(question);
+
+		List<Question> searchList = dao.search(question);
 
 
 	}
