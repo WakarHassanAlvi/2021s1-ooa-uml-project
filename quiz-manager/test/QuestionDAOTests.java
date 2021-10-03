@@ -1,4 +1,5 @@
 
+import java.sql.SQLException;
 import java.util.List;
 
 import fr.epita.quiz.datamodel.Question;
@@ -8,7 +9,7 @@ import fr.epita.quiz.services.data.QuestionDAO;
 public class QuestionDAOTests {
 
 
-	public static void main(String[] args)  {
+	public static void main(String[] args) throws SQLException {
 		QuestionDAO dao = new QuestionDAO();
 		try {
 			dao.create(new Question("test question"));
