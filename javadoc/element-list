@@ -1,0 +1,6 @@
+unnamed package
+fr.epita.quiz.datamodel
+fr.epita.quiz.exceptions
+fr.epita.quiz.launcher
+fr.epita.quiz.services.conf
+fr.epita.quiz.services.data

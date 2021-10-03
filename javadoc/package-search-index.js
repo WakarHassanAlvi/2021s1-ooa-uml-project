@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","url":"allpackages-index.html"},{"l":"fr.epita.quiz.datamodel"},{"l":"fr.epita.quiz.exceptions"},{"l":"fr.epita.quiz.launcher"},{"l":"fr.epita.quiz.services.conf"},{"l":"fr.epita.quiz.services.data"}]
